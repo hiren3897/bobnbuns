@@ -1,0 +1,59 @@
+# Netlify Configuration for Bob 'N' Buns
+
+[build]
+  publish = "."
+
+# Instant Google Review Redirect
+[[redirects]]
+  from = "/review"
+  to = "https://share.google/Tr1mjQjTwQxDnojWD"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/google-review"
+  to = "https://share.google/Tr1mjQjTwQxDnojWD"
+  status = 302
+  force = true
+
+# Clean Menu & Table Stand Links
+[[redirects]]
+  from = "/menu"
+  to = "/bobnbuns-menu.pdf"
+  status = 200
+
+[[redirects]]
+  from = "/pdf"
+  to = "/bobnbuns-menu.pdf"
+  status = 200
+
+[[redirects]]
+  from = "/table"
+  to = "/table-stand.html"
+  status = 200
+
+[[redirects]]
+  from = "/qr"
+  to = "/table-stand.html"
+  status = 200
+
+# Cache & Performance Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/bobnbuns-menu.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "application/pdf"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+    Content-Type = "image/svg+xml"
+    Cache-Control = "public, max-age=604800"
+

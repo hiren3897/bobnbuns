@@ -1,0 +1,483 @@
+/* Styles for Desk Stand & Table QR Center */
+
+:root {
+  --bg-tool-bar: #181920;
+  --tool-border: #2e313d;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --brand-orange: #ea580c;
+  --brand-amber: #f59e0b;
+  --brand-gradient: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  --accent-green: #16a34a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0f1015;
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Screen Customizer Toolbar */
+.customizer-toolbar {
+  background: var(--bg-tool-bar);
+  border-bottom: 1px solid var(--tool-border);
+  padding: 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.toolbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.toolbar-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.toolbar-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.toolbar-title-group h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.toolbar-title-group p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btn-print {
+  background: var(--brand-gradient);
+  color: #ffffff;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-print:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.6);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--tool-border);
+  padding: 0.55rem 0.95rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-outline:hover {
+  background: #252834;
+  border-color: #4a4f63;
+}
+
+/* Toolbar Control Form */
+.toolbar-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.85rem;
+  background: #111218;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #232530;
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.control-item label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.control-input, .control-select {
+  background: #1d1e26;
+  border: 1px solid #323545;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.control-input:focus, .control-select:focus {
+  border-color: var(--brand-amber);
+}
+
+/* Stage & Preview Area */
+.preview-stage {
+  flex: 1;
+  padding: 3rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #090a0d;
+}
+
+.stand-preview-wrapper {
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+/* THEME: DARK (Default) */
+.stand-preview-wrapper.theme-dark {
+  --card-bg: #15171e;
+  --card-border: #2c2f3d;
+  --card-text: #ffffff;
+  --card-sub: #94a3b8;
+  --qr-box-bg: #ffffff;
+  --divider-color: #2c2f3d;
+  --shadow-print: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* THEME: LIGHT (Ink-Saver for Paper Print) */
+.stand-preview-wrapper.theme-light {
+  --card-bg: #ffffff;
+  --card-border: #d1d5db;
+  --card-text: #111827;
+  --card-sub: #4b5563;
+  --qr-box-bg: #f9fafb;
+  --divider-color: #e5e7eb;
+  --shadow-print: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* LAYOUT 1: Foldable Table Tent */
+.tent-card-page {
+  width: 480px;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-print);
+  color: var(--card-text);
+  position: relative;
+}
+
+.tent-half {
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tent-fold-divider {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--divider-color);
+  gap: 0.75rem;
+}
+
+.fold-line {
+  flex: 1;
+  height: 1px;
+  border-top: 1px dashed #64748b;
+}
+
+.fold-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+/* LAYOUT 2: Acrylic Stand Insert */
+.acrylic-card {
+  width: 620px;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: var(--shadow-print);
+  color: var(--card-text);
+}
+
+.acrylic-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--divider-color);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.dual-qr-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.single-qr-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.panel-divider {
+  width: 2px;
+  background: var(--divider-color);
+  align-self: stretch;
+}
+
+.acrylic-footer {
+  border-top: 2px solid var(--divider-color);
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--card-sub);
+}
+
+/* LAYOUT 3: Separate Individual Cards */
+.separate-cards-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.individual-card {
+  width: 340px;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: var(--shadow-print);
+  color: var(--card-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Common Card Elements */
+.card-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.brand-badge-mini {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--brand-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+}
+
+.card-brand-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.card-brand-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--card-sub);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.table-badge {
+  background: #252836;
+  color: #fde047;
+  border: 1px solid #ca8a04;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.qr-holder-box {
+  background: var(--qr-box-bg);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--divider-color);
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.qr-svg-wrapper {
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-callout-pill {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.menu-pill {
+  background: rgba(245, 158, 11, 0.18);
+  color: #f59e0b;
+  border: 1px solid #f59e0b;
+}
+
+.review-pill {
+  background: rgba(234, 88, 12, 0.18);
+  color: #ea580c;
+  border: 1px solid #ea580c;
+}
+
+.stars-gold {
+  color: #eab308;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.35rem;
+}
+
+.card-instruction {
+  font-size: 0.78rem;
+  color: var(--card-sub);
+  max-width: 240px;
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+
+.url-hint {
+  font-size: 0.65rem;
+  color: #64748b;
+  font-family: monospace;
+}
+
+.card-footer-mini {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--divider-color);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: var(--card-sub);
+  font-weight: 600;
+}
+
+/* PRINT MEDIA QUERIES (Triggered when user clicks Print) */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .customizer-toolbar, .no-print {
+    display: none !important;
+  }
+
+  .preview-stage {
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .stand-preview-wrapper {
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .tent-card-page, .acrylic-card, .individual-card {
+    box-shadow: none !important;
+    border-color: #999999 !important;
+    page-break-inside: avoid;
+  }
+
+  /* Force background colors and exact print rendering */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    margin: 1cm;
+    size: auto;
+  }
+}
+

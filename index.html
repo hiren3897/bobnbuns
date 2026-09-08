@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bob 'N' Buns | Where Flavor Meets Fun | Surat Pure Veg Burgers, Meals & Wraps</title>
+  <meta name="description" content="Official digital menu of Bob 'N' Buns, Surat. Delicious 100% Pure Veg Burgers, Value Meal Combos, Wraps, French Fries, and Pizzas. View & download PDF menu or rate us on Google.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍔</text></svg>">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#" class="brand-group">
+        <div class="brand-logo-badge">🍔</div>
+        <div class="brand-titles">
+          <span class="brand-name">Bob 'N' Buns</span>
+          <span class="brand-tagline">Where Flavor Meets Fun</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="table-stand.html" class="btn btn-secondary" title="View printable desk QR stand">
+          <span>🖨️</span>
+          <span class="btn-text-hide">Desk QR Stand</span>
+        </a>
+        <a href="bobnbuns-menu.pdf" target="_blank" class="btn btn-secondary" title="View official PDF menu">
+          <span>📄</span>
+          <span class="btn-text-hide">Menu PDF</span>
+        </a>
+        <a href="https://share.google/Tr1mjQjTwQxDnojWD" target="_blank" rel="noopener noreferrer" class="btn btn-review" title="Rate Bob 'N' Buns on Google">
+          <span>⭐</span>
+          <span>Google Review</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-banner">
+      <div class="hero-top-row">
+        <div class="veg-indicator-badge">
+          <span class="veg-dot-icon"></span>
+          <span>100% PURE VEG RESTAURANT</span>
+        </div>
+        <div class="delivery-partners">
+          <span class="partner-tag">Order also on:</span>
+          <span class="partner-badge badge-swiggy">Swiggy</span>
+          <span class="partner-badge badge-zomato">Zomato</span>
+        </div>
+      </div>
+
+      <h1 class="hero-title">
+        Delicious Food Crafted for <span>Ultimate Cravings</span>
+      </h1>
+      <p class="hero-subtitle">
+        Welcome to Bob 'N' Buns Surat! Explore our value meal combos, gourmet veg burgers, loaded fries, artisan wraps, and bubbly cheesy pizzas. Scan or browse below!
+      </p>
+
+      <div class="hero-quick-cards">
+        <a href="bobnbuns-menu.pdf" target="_blank" class="quick-card">
+          <div class="quick-card-icon icon-pdf">📄</div>
+          <div class="quick-card-info">
+            <h4>Official Menu PDF</h4>
+            <p>View & download the original 2-page print menu</p>
+          </div>
+        </a>
+
+        <a href="https://share.google/Tr1mjQjTwQxDnojWD" target="_blank" rel="noopener noreferrer" class="quick-card">
+          <div class="quick-card-icon icon-review">⭐</div>
+          <div class="quick-card-info">
+            <h4>Google Review</h4>
+            <p>Leave us a 5-star rating & review on Google Maps</p>
+          </div>
+        </a>
+
+        <a href="table-stand.html" class="quick-card">
+          <div class="quick-card-icon icon-desk">🖨️</div>
+          <div class="quick-card-info">
+            <h4>Table QR Stand</h4>
+            <p>Printable table tent with Menu & Review QR codes</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Search & Category Bar -->
+  <div class="menu-controls-wrapper">
+    <div class="menu-controls">
+      <div class="search-row">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search menu (e.g. paneer, tandoori, fries, pizza, combo)..." autocomplete="off">
+          <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Clear search">✕</button>
+        </div>
+        <span id="totalItemsCount" style="font-size: 0.8rem; color: var(--text-muted); white-space: nowrap;"></span>
+      </div>
+
+      <div class="category-pills" id="categoryPills">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Menu Grid -->
+  <main class="menu-section" id="menuContainer">
+    <!-- Injected dynamically by app.js -->
+  </main>
+
+  <!-- Official PDF Viewer Section -->
+  <section class="pdf-section" id="pdfSection">
+    <div class="pdf-container">
+      <div class="section-header-centered">
+        <span class="section-tag">Direct Menu Access</span>
+        <h2 class="section-title">Official Bob 'N' Buns PDF Menu</h2>
+        <p class="section-subtitle">You can preview the restaurant's printed menu directly or download the high-resolution copy.</p>
+      </div>
+
+      <div class="pdf-preview-box">
+        <div class="pdf-embed-wrapper">
+          <iframe src="bobnbuns-menu.pdf#toolbar=1&navpanes=0" title="Bob 'N' Buns PDF Menu"></iframe>
+        </div>
+        <div class="pdf-actions">
+          <a href="bobnbuns-menu.pdf" download="BobNBuns-Surat-Menu.pdf" class="btn btn-primary">
+            <span>📥</span> Download Menu PDF
+          </a>
+          <a href="bobnbuns-menu.pdf" target="_blank" class="btn btn-secondary">
+            <span>↗️</span> Open in Full Window
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Review & Location Info -->
+  <section class="info-section">
+    <div class="info-cards-grid">
+      <!-- Review Card -->
+      <div class="info-card">
+        <div>
+          <div class="info-card-header">
+            <div class="info-card-icon">⭐</div>
+            <h3 class="info-card-title">Love Bob 'N' Buns?</h3>
+          </div>
+          <div class="stars-rating">★★★★★</div>
+          <p class="info-card-content">
+            Your feedback means the world to our team! Scan or tap below to share your dining experience and leave us a review on Google.
+          </p>
+        </div>
+        <a href="https://share.google/Tr1mjQjTwQxDnojWD" target="_blank" rel="noopener noreferrer" class="btn btn-review" style="width: 100%; justify-content: center; padding: 0.75rem;">
+          <span>⭐</span> Rate Us on Google
+        </a>
+      </div>
+
+      <!-- Visit & Order Card -->
+      <div class="info-card">
+        <div>
+          <div class="info-card-header">
+            <div class="info-card-icon">📍</div>
+            <h3 class="info-card-title">Visit & Contact</h3>
+          </div>
+          <div class="contact-row">
+            <span>📍</span>
+            <span>Shop No. 3, Block No-80, Parvat Gam Road, Behind Capital Squar, Surat - 395012</span>
+          </div>
+          <div class="contact-row">
+            <span>📞</span>
+            <a href="tel:+919619242499">+91 9619242499 (Call)</a>
+          </div>
+          <div class="contact-row">
+            <span>💬</span>
+            <a href="https://wa.me/919619123404?text=Hi%20Bob%27n%27Buns%2C%20I%20would%20like%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer">+91 9619123404 (WhatsApp)</a>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+          <a href="https://wa.me/919619123404?text=Hi%20Bob%27n%27Buns%2C%20I%20would%20like%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1; justify-content: center;">
+            <span>💬</span> WhatsApp
+          </a>
+          <a href="tel:+919619242499" class="btn btn-secondary" style="flex: 1; justify-content: center;">
+            <span>📞</span> Call
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="brand-group">
+        <div class="brand-logo-badge" style="width: 36px; height: 36px; font-size: 1.2rem;">🍔</div>
+        <span class="brand-name" style="font-size: 1.15rem;">Bob 'N' Buns</span>
+      </div>
+      <div class="footer-links">
+        <a href="#menuContainer">Digital Menu</a>
+        <a href="bobnbuns-menu.pdf" target="_blank">PDF Menu</a>
+        <a href="table-stand.html">Table QR Stand Generator</a>
+        <a href="https://share.google/Tr1mjQjTwQxDnojWD" target="_blank" rel="noopener noreferrer">Google Review</a>
+      </div>
+      <p class="footer-copy">
+        © 2026 Bob 'N' Buns Surat. 100% Pure Veg • Where Flavor Meets Fun.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Mobile Fixed Navigation Bar -->
+  <nav class="mobile-bottom-bar" aria-label="Mobile Navigation">
+    <div class="mobile-bottom-grid">
+      <a href="#menuContainer" class="mobile-nav-btn active">
+        <span class="btn-icon">🍔</span>
+        <span>Menu</span>
+      </a>
+      <a href="bobnbuns-menu.pdf" target="_blank" class="mobile-nav-btn">
+        <span class="btn-icon">📄</span>
+        <span>PDF Menu</span>
+      </a>
+      <a href="https://share.google/Tr1mjQjTwQxDnojWD" target="_blank" rel="noopener noreferrer" class="mobile-nav-btn">
+        <span class="btn-icon">⭐</span>
+        <span>Review</span>
+      </a>
+      <a href="https://wa.me/919619123404?text=Hi%20Bob%27n%27Buns%2C%20I%20would%20like%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="mobile-nav-btn">
+        <span class="btn-icon">💬</span>
+        <span>Order</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="assets/menu-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
