@@ -6,7 +6,8 @@ const BOBNBUNS_DATA = {
     phone: "+91 9619242499",
     whatsapp: "+91 9619123404",
     address: "Shop No. 3, Block No-80, Parvat Gam Road, Behind Capital Squar, Surat - 395012",
-    googleReviewUrl: "https://share.google/Tr1mjQjTwQxDnojWD",
+    googleReviewUrl: "https://www.google.com/search?kgmid=/g/11nv727jc5&hl=en-IN&q=BobNBuns&shem=epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/osrp/m5/1&kgs=d67c33ee5378d4a9#lrd=/g/11nv727jc5,3,,,",
+    logoUrl: "assets/logo.png",
     pdfMenuUrl: "bobnbuns-menu.pdf",
     swiggyUrl: "https://www.swiggy.com",
     zomatoUrl: "https://www.zomato.com"

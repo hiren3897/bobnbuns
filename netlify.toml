@@ -3,16 +3,16 @@
 [build]
   publish = "."
 
-# Instant Google Review Redirect
+# Instant Direct Google Review Dialog Redirect
 [[redirects]]
   from = "/review"
-  to = "https://share.google/Tr1mjQjTwQxDnojWD"
+  to = "https://www.google.com/search?kgmid=/g/11nv727jc5&hl=en-IN&q=BobNBuns&shem=epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/osrp/m5/1&kgs=d67c33ee5378d4a9#lrd=/g/11nv727jc5,3,,,"
   status = 302
   force = true
 
 [[redirects]]
   from = "/google-review"
-  to = "https://share.google/Tr1mjQjTwQxDnojWD"
+  to = "https://www.google.com/search?kgmid=/g/11nv727jc5&hl=en-IN&q=BobNBuns&shem=epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/osrp/m5/1&kgs=d67c33ee5378d4a9#lrd=/g/11nv727jc5,3,,,"
   status = 302
   force = true
 

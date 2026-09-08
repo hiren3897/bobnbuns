@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const printBtn = document.getElementById('printBtn');
   const standContainer = document.getElementById('standPreviewContainer');
 
+  // Direct review URL with #lrd=...,3,,, hash which triggers the review popup directly on Google
+  const directReviewUrl = "https://www.google.com/search?kgmid=/g/11nv727jc5&hl=en-IN&q=BobNBuns&shem=epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/osrp/m5/1&kgs=d67c33ee5378d4a9#lrd=/g/11nv727jc5,3,,,";
+
   // Set default Menu URL to current window origin if on live domain, or bobnbuns.netlify.app
   const defaultMenuUrl = (window.location.origin && !window.location.origin.includes('file://'))
     ? window.location.origin
@@ -15,6 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (menuUrlInput && !menuUrlInput.value) {
     menuUrlInput.value = defaultMenuUrl;
+  }
+
+  if (reviewUrlInput && (!reviewUrlInput.value || reviewUrlInput.value.includes('share.google/Tr1mjQjTwQxDnojWD'))) {
+    reviewUrlInput.value = directReviewUrl;
   }
 
   // Generate QR code SVG using standard QRCode library
@@ -40,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function updateCards() {
     const menuUrl = menuUrlInput.value.trim() || 'https://bobnbuns.netlify.app';
-    const reviewUrl = reviewUrlInput.value.trim() || 'https://share.google/Tr1mjQjTwQxDnojWD';
+    const reviewUrl = reviewUrlInput.value.trim() || directReviewUrl;
     const tableNum = tableNumInput.value.trim();
     const layout = layoutSelect.value;
     const theme = themeSelect.value;
@@ -57,18 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
       ? `<div class="table-badge"><span>TABLE</span> <strong>${tableNum}</strong></div>` 
       : '';
 
+    const brandHeaderHtml = `
+      <div class="card-branding">
+        <img src="assets/logo.png" alt="Bob 'N' Buns" class="brand-logo-img-stand">
+      </div>
+    `;
+
     if (layout === 'tent') {
       // Foldable Triangle Table Tent (2 sides)
       standContainer.innerHTML = `
         <div class="tent-card-page">
+          <!-- Side 1: Menu -->
           <div class="tent-half tent-half-top">
-            <div class="card-branding">
-              <div class="brand-badge-mini">🍔</div>
-              <div>
-                <div class="card-brand-title">BOB 'N' BUNS</div>
-                <div class="card-brand-sub">WHERE FLAVOR MEETS FUN • 100% PURE VEG</div>
-              </div>
-            </div>
+            ${brandHeaderHtml}
             ${tableBadgeHtml}
             <div class="card-content-center">
               <div class="qr-holder-box">
@@ -86,20 +94,16 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
 
+          <!-- Center Fold Guide -->
           <div class="tent-fold-divider">
             <div class="fold-line"></div>
             <span class="fold-label">✂️ FOLD HERE FOR TRIANGLE TABLE TENT ✂️</span>
             <div class="fold-line"></div>
           </div>
 
+          <!-- Side 2: Review -->
           <div class="tent-half tent-half-bottom">
-            <div class="card-branding">
-              <div class="brand-badge-mini">⭐</div>
-              <div>
-                <div class="card-brand-title">BOB 'N' BUNS</div>
-                <div class="card-brand-sub">WHERE FLAVOR MEETS FUN • 100% PURE VEG</div>
-              </div>
-            </div>
+            ${brandHeaderHtml}
             ${tableBadgeHtml}
             <div class="card-content-center">
               <div class="qr-holder-box">
@@ -109,12 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span>⭐ RATE US ON GOOGLE</span>
               </div>
               <div class="stars-gold">★★★★★</div>
-              <p class="card-instruction">Loved your meal? Tap or scan to leave a quick review!</p>
-              <div class="url-hint">share.google/Tr1mjQjTwQxDnojWD</div>
+              <p class="card-instruction">Scan to open the 5-star review dialog directly on Google!</p>
+              <div class="url-hint">Opens Direct Review Popup</div>
             </div>
             <div class="card-footer-mini">
               <span>Swiggy • Zomato</span>
-              <span>Surat - 395012</span>
+              <span>100% Pure Veg • Surat</span>
             </div>
           </div>
         </div>
@@ -124,12 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
       standContainer.innerHTML = `
         <div class="acrylic-card">
           <div class="acrylic-card-header">
-            <div class="card-branding">
-              <div class="brand-badge-mini">🍔</div>
-              <div>
-                <div class="card-brand-title">BOB 'N' BUNS</div>
-                <div class="card-brand-sub">WHERE FLAVOR MEETS FUN • 100% PURE VEG</div>
-              </div>
+            <div class="card-branding" style="justify-content: flex-start; margin-bottom: 0;">
+              <img src="assets/logo.png" alt="Bob 'N' Buns" class="brand-logo-img-stand">
             </div>
             ${tableBadgeHtml}
           </div>
@@ -159,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span>⭐ RATE ON GOOGLE</span>
               </div>
               <div class="stars-gold">★★★★★</div>
-              <p class="card-instruction">Loved the food? Share a review!</p>
-              <div class="url-hint">share.google/Tr1mjQjTwQxDnojWD</div>
+              <p class="card-instruction">Opens direct Google review dialog</p>
+              <div class="url-hint">Direct 5-Star Review Popup</div>
             </div>
           </div>
 
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span>📍 Shop No. 3, Block 80, Parvat Gam Road, Surat</span>
             </div>
             <div class="footer-badges">
-              <span>Available on Swiggy & Zomato</span>
+              <span>100% Pure Veg • Swiggy & Zomato</span>
             </div>
           </div>
         </div>
@@ -181,13 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="separate-cards-container">
           <!-- Card 1: Menu -->
           <div class="individual-card">
-            <div class="card-branding">
-              <div class="brand-badge-mini">🍔</div>
-              <div>
-                <div class="card-brand-title">BOB 'N' BUNS</div>
-                <div class="card-brand-sub">WHERE FLAVOR MEETS FUN • 100% PURE VEG</div>
-              </div>
-            </div>
+            ${brandHeaderHtml}
             ${tableBadgeHtml}
             <div class="card-content-center">
               <div class="qr-holder-box">
@@ -206,13 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           <!-- Card 2: Review -->
           <div class="individual-card">
-            <div class="card-branding">
-              <div class="brand-badge-mini">⭐</div>
-              <div>
-                <div class="card-brand-title">BOB 'N' BUNS</div>
-                <div class="card-brand-sub">WHERE FLAVOR MEETS FUN • 100% PURE VEG</div>
-              </div>
-            </div>
+            ${brandHeaderHtml}
             ${tableBadgeHtml}
             <div class="card-content-center">
               <div class="qr-holder-box">
@@ -222,8 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span>⭐ RATE US ON GOOGLE</span>
               </div>
               <div class="stars-gold">★★★★★</div>
-              <p class="card-instruction">Your feedback helps us serve you better!</p>
-              <div class="url-hint">share.google/Tr1mjQjTwQxDnojWD</div>
+              <p class="card-instruction">Scan to open the 5-star review dialog directly!</p>
+              <div class="url-hint">Direct Review Popup</div>
             </div>
             <div class="card-footer-mini">
               <span>📍 Parvat Gam Road, Behind Capital Squar, Surat</span>
@@ -283,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (downloadReviewBtn) {
     downloadReviewBtn.addEventListener('click', () => {
-      const url = reviewUrlInput.value.trim() || 'https://share.google/Tr1mjQjTwQxDnojWD';
+      const url = reviewUrlInput.value.trim() || directReviewUrl;
       triggerDownload(url, 'bobnbuns-google-review-qr.svg');
     });
   }
